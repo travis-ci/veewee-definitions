@@ -10,6 +10,17 @@ apt-get -y install linux-headers-$(uname -r) build-essential
 apt-get -y install zlib1g-dev libssl-dev libreadline-dev zlib1g-dev zlib1g libreadline6
 apt-get clean
 
+# Installing the virtualbox guest additions
+apt-get -y install dkms linux-headers-3.2.0-29-generic-pae
+VBOX_VERSION=$(cat /home/travis/.vbox_version)
+cd /tmp
+wget http://download.virtualbox.org/virtualbox/$VBOX_VERSION/VBoxGuestAdditions_$VBOX_VERSION.iso
+mount -o loop VBoxGuestAdditions_$VBOX_VERSION.iso /mnt
+sh /mnt/VBoxLinuxAdditions.run
+umount /mnt
+
+rm VBoxGuestAdditions_$VBOX_VERSION.iso
+
 # Setup sudo to allow no-password sudo for "admin"
 cp /etc/sudoers /etc/sudoers.orig
 sed -i -e '/Defaults\s\+env_reset/a Defaults\texempt_group=admin' /etc/sudoers

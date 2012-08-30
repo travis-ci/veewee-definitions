@@ -13,7 +13,7 @@ apt-get -y install vim
 apt-get clean
 
 # Installing the virtualbox guest additions
-apt-get -y install dkms
+apt-get -y install dkms linux-headers-3.2.0-29-generic-pae
 VBOX_VERSION=$(cat /home/travis/.vbox_version)
 cd /tmp
 wget http://download.virtualbox.org/virtualbox/$VBOX_VERSION/VBoxGuestAdditions_$VBOX_VERSION.iso
