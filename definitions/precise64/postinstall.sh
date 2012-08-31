@@ -21,6 +21,8 @@ mount -o loop VBoxGuestAdditions_$VBOX_VERSION.iso /mnt
 sh /mnt/VBoxLinuxAdditions.run
 umount /mnt
 
+sudo /etc/init.d/vboxadd setup
+
 rm VBoxGuestAdditions_$VBOX_VERSION.iso
 
 # Setup sudo to allow no-password sudo for "admin"
