@@ -78,7 +78,7 @@ chown -R travis /home/travis/.ssh
 
 # Remove items used for building, since they aren't needed anymore
 apt-get -y remove linux-headers-$(uname -r) build-essential
-apt-get -y autoclean autoremove
+apt-get -y clean autoremove
 
 # Zero out the free space to save space in the final image:
 dd if=/dev/zero of=/EMPTY bs=1M
