@@ -15,7 +15,11 @@ or
 
     ./bin/veewee vbox build precise64
 
-to build the box you need.
+to build the box you need. To export it, run
+
+    ./bin/vagrant basebox export 'precise32'
+
+and so on.
 
 
 ## License & copyright information ##
