@@ -4,3 +4,4 @@ iso/*
 ~#
 bin/*
 .bundle/*
+*.DS_Store
