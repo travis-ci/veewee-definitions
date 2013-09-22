@@ -1,3 +1,5 @@
+## [Deprecated] This project is not currently maintained as we figure out our VM tooling moving forward.
+
 # Travis CI Base Box Definitions #
 
 These definitions are used to build base Vagrant boxes Travis CI developers use.
